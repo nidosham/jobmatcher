@@ -1,0 +1,154 @@
+<html>{% load static %}
+
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript " src="/static/js/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="{% static 'js/theajax.js' %} "></script>
+    <style>
+        .topnav.logout {
+            align-self: right;
+        }
+        
+        .topnav-right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topnav">
+        <div style="float:left;"><img src="../static/images/logo.PNG" width="100px" width="80px"></div>
+        <a class="active" href="/matcher/home">Home</a>
+        <a href="/matcher/contacts">Contacts</a>
+        <a href="/matcher/about ">About</a>
+        <a class="nav-link" href="/matcher/notifications">Notifications</a>
+        <div class="topnav-right">
+            <a classs=".logo" href="/matcher/logout ">Sign out</a>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="content" style="align-content: center;">
+            <div style="background-color:rgb(189, 194, 204);margin: 5px;border-radius: 15px;">
+                <h1>Education </h1>
+                {%if form1%}
+                <table width="800" border="1" cellspacing="2" cellpadding="2">
+                    <tr>
+                        <td>Course</td>
+                        <td>School</td>
+                        <td>Level</td>
+                        <td>Field of study</td>
+                        <td>Modify </td>
+                    </tr>{%for e in form1%}
+                    <tr>
+                        <td>{{e.course}} </td>
+                        <td>{{e.schoolName}}</td>
+                        <td>{{e.educationLevel}}</td>
+                        <td>{{e.field_of_study}}</td>
+                        <td><a class="btn btn-primary " href="/matcher/education/{{e.id}}">Edit</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>{%else%}{%endif%}
+                <button class="btn btn-success " onclick="window.location.href='/matcher/education';"> +</button>
+
+            </div>
+            <div style="background-color:rgb(189, 194, 204);margin: 5px;border-radius: 15px;">
+                <h1>Experience</h1>
+                {%if form1%}
+                <table width=" 800 " border="1 " cellspacing="2 " cellpadding="2 ">
+                    <tr>
+                        <td>Title</td>
+                        <td>Company</td>
+                        <td>Employment Type</td>
+                        <td>Field of Work</td>
+                        <td>Duration </td>
+                        <td>Modify </td>
+                    </tr>{%for ex in form2%}
+                    <tr>
+                        <td>{{ex.title}} </td>
+                        <td>{{ex.company}}</td>
+                        <td>{{ex.employmentType}}</td>
+                        <td>{{ex.fieldOfwork}}</td>
+                        <td>{{ex.duration}}</td>
+                        <td><a class="btn btn-primary " href="/matcher/experience/{{ex.id}}">Edit</a></td>
+                    </tr>
+                    {%endfor%}
+                </table>{%else%}{%endif%}
+                <button class="btn btn-success " onclick="window.location.href='/matcher/experience' ; "> + </button>
+
+            </div>
+            <div style="background-color:rgb(189, 194, 204);margin: 5px;border-radius: 15px;">
+                <h1>Skills</h1>
+                {%if form3%}
+                <table width="800 " border="1 " cellspacing="2 " cellpadding="2 ">
+                    <tr>
+                        <td>Course</td>
+                    </tr>{%for s in form1%}
+                    <tr>
+                        <td>{{s.skills}} </td>
+                    </tr>
+                    {%endfor%}
+                </table>{%else%}{%endif%}
+                <button id="skill" class="btn btn-success " onclick="window.location.href='/matcher/skills' ; "> + </button>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#skill').click(function() {
+                $('#skill').after("<br><input type=\"text\" name=\"askill\" id=\"askill\" \\> " +
+                    "<button type=\"button\" class=\"btn btn-lg btn-success\" name=\"submit\" id=\"submit\" >Save</button>" +
+                    "<button type= \"button\" class=\"btn btn-lg btn-warning\" name=\"cancel\" id=\"cancel\" >Cancel</button>");
+
+                document.createElement('skill');
+
+            });
+        });
+        document.body.addEventListener('click', function(event) {
+            if (event.srcElement.id == 'submit') {
+                //alert($('#messageReply').val());
+
+                if ($('#askill').val() == "") {
+                    alert("No input!");
+
+                } else {
+                    $('#skill').after($('#askill').val());
+                    $.ajax({
+                        type: "POST",
+                        url: '/matcher/skills/',
+                        data: {
+                            message: $('#askill').val(),
+                            'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+                            dataType: 'json'
+                        },
+                        success: skillSubmitted
+                    });
+                }
+
+            }
+            if (event.srcElement.id == 'cancel') {
+                $('#askill').remove();
+                $('#submit').remove();
+                $('#cancel').remove();
+            }
+        });
+
+        function skillSubmitted(data) {
+            $('#askill').remove();
+            $('#submit').remove();
+            $('#cancel').remove();
+            $('#themessage').append("<p style=\"color:green;\"><br>" + data.msg + "</p>"); /* response message */
+
+
+        }
+    </script>
+</body>
+
+</html>

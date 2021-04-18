@@ -1,0 +1,370 @@
+body {
+    background: url(../images/background.jpg) no-repeat center center cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #666;
+}
+
+.cent {
+    background: url(../images/contact_background.jpg) repeat center center;
+    padding: 0px 0px 10px 10px;
+    width: 1000px;
+    height: 500px;
+    padding: 50px;
+    margin-left: 15%;
+}
+
+.container {
+    width: 80%;
+    max-width: 1260px;
+    min-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.sidebar1 {
+    float: left;
+    width: 230px;
+    background-color: #9ba89d;
+    padding-bottom: 10px;
+}
+
+.main-center {
+    margin-left: 30%;
+    max-width: 500px;
+    padding: 40px 40px;
+}
+
+.main-login-center {
+    margin-top: 10%;
+    margin-left: 30%;
+    max-width: 500px;
+    padding: 40px 40px;
+}
+
+.content {
+    margin-left: 10%;
+    width: 800px;
+    height: 100%;
+}
+
+.about_content {
+    padding-left: 230px;
+    width: 80%;
+    float: left;
+    /*background-color: #080808;*/
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(145, 105, 105);
+    font-size: 2em;
+    font-family: serif;
+}
+
+.topnav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: darkorange
+}
+
+ul.nav li:hover {
+    list-style: none;
+    border-top: 1px solid #666;
+    background-color: rgb(123, 168, 50);
+    color: white;
+}
+
+.topnav a:hover {
+    background-color: rgb(123, 168, 50);
+    text-decoration: none;
+    color: white;
+}
+
+.topnav a:active {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+}
+
+.topnav a:visited {
+    background-color: #4CAF50;
+    text-decoration: none;
+}
+
+.panel-default {
+    opacity: 0.95;
+    margin-top: 30px;
+}
+
+.form-group.last {
+    margin-bottom: 0px;
+}
+
+.main {
+    margin-top: -10px;
+}
+
+h1.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Create two equal columns that floats next to each other */
+
+
+/* Clear floats after the columns */
+
+hr {
+    width: 10%;
+}
+
+p {
+    margin-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+btn,
+btn:link,
+btn:visited {
+    background-color: #4CAF50;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+
+.search-input {
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    line-height: 28px;
+    transition: width 0.4s linear
+}
+
+.search .search-input {
+    width: 100%;
+    caret-color: #536bf6;
+    font-size: 19px;
+    font-weight: 300;
+    background-color: white;
+    transition: width 0.4s linear
+}
+
+.search-icon {
+    height: 34px;
+    width: 34px;
+    padding-top: 0px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #536bf6;
+    font-size: 10px;
+    bottom: 30px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.search-icon:hover {
+    color: #fff !important
+}
+
+.message_container {
+    width: 100%;
+    max-width: 1260px;
+    min-width: 780px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.mymessage {
+    width: 600px;
+    padding: 50px;
+    margin: 20px;
+    border: 15px solid green;
+    border-radius: 10px;
+}
+
+
+/*--- navigation bar ---*/
+
+.navbar {
+    background: #6ab446;
+}
+
+.nav-link,
+.navbar-brand {
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+
+/*
+.navbar-collapse {
+    justify-content: flex-end;
+}
+*/
+
+ul.nav {
+    list-style: none;
+    border-top: 1px solid #666;
+}
+
+ul.nav li {
+    border-bottom: 1px solid #666;
+}
+
+
+/*--- header ---*/
+
+.header {
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.description {
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+
+/*--- feature section ---*/
+
+.features {
+    margin: 4em auto;
+    padding: 1em;
+    position: relative;
+}
+
+.feature-title {
+    color: rgb(247, 240, 240);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.features img {
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 16px;
+}
+
+.features .form-control,
+.features input {
+    border-radius: 0;
+}
+
+.features .btn {
+    background-color: #589b37;
+    border: 1px solid #589b37;
+    margin-top: 20px;
+}
+
+.features .btn:hover {
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+/*Normalize html and body elements,this style is just good to have*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*--- footer ---*/
+
+.page-footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+.footer-copyright {
+    padding: 10px 0;
+}
+
+
+/*--- media queries ---*/
+
+@media (max-width: 575.98px) {
+    .description {
+        left: 0;
+        padding: 0 15px;
+        position: absolute;
+        top: 10%;
+        transform: none;
+        text-align: center;
+    }
+    .description h1 {
+        font-size: 2em;
+    }
+    .description p {
+        font-size: 1.2rem;
+    }
+    .features {
+        margin: 0;
+    }
+}

@@ -1,0 +1,125 @@
+<!doctype html>{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Registration</title>
+
+    <link rel="stylesheet " href="{% static 'css/login.css' %} ">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet " href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css ">
+    <link rel="stylesheet " href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-tdeme.min.css ">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+
+
+<div class="row main">
+
+    <div class="main-login main-login-center" style="align-content: center;">
+        <div class="wrapper">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    {% if flag == True %}
+                    <h1 class="title">You Registered Successfully</h1>
+                    <div class="login-register login-reg text-center ">
+                        <a href="/matcher/login " Class="btn btn-primary" style="width:100;">Login</a>
+                    </div>
+                    {% else %}
+                    <h1 class="title">Registeration Form</h1>
+                </div>
+            </div>
+
+            <form class="form-horizontal " method="post" action="# ">{% csrf_token %}
+                <div class="field" id="fname">
+                    {{form.firstname}}
+                    <label>First Name</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field" id="lname">
+                    {{form.lastname}}
+                    <label>Last Name</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field" id="uname">
+                    {{form.username}}
+                    <label>Username</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field">
+                    {{form.email}}
+                    <label>Enter email</label>
+                </div>
+                <div class="field">
+                    {{form.password}}
+                    <label id="strength">Password</label>
+                </div>
+
+                <div class="field">
+                    {{form.confirmPassword}}
+                    <label>Confirm Password</label>
+                </div>
+                <div class="field" id="country">
+                    {{form.country}}
+                    <label>country</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field" id="state">
+                    {{form.state}}
+                    <label>state</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field" id="city">
+                    {{form.city}}
+                    <label>city</label><span style="color:red" id="error"></span>
+                </div>
+                <div class="field">
+                    <input type="submit" value="Sign up">
+                </div>
+                <div class="signup-link">
+                    Registered? <a href="/matcher/login">login</a></div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif%}
+<footer class="page-footer ">
+    <div class="row ">
+
+        <a style="color:white " href="/about ">About</a>
+        <a style="color:white " href="/">home</a>
+
+
+    </div>
+
+
+</footer>
+<script>
+    function passwordChanged() {
+        var strength = document.getElementById('strength');
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var pwd = document.getElementById("id_password");
+        if (pwd.value.length == 0) {
+            strength.innerHTML = 'Type Password';
+        } else if (false == enoughRegex.test(pwd.value)) {
+            strength.innerHTML = 'Password:<span style="color:red">Too short!</span>';
+        } else if (strongRegex.test(pwd.value)) {
+            strength.innerHTML = 'Password:<span style="color:green">Strong!</span>';
+        } else if (mediumRegex.test(pwd.value)) {
+            strength.innerHTML = 'Password:<span style="color:orange">Medium!</span>';
+        } else {
+            strength.innerHTML = 'Password:<span style="color:red">Weak!</span>';
+        }
+    }
+</script>
+
+<script type="text/javascript " src="{% static 'js/bootstrap.js' %} "></script>
+<script type="text/javascript " src="{% static 'js/ajax.js' %} "></script>
+<script type="text/javascript " src="{% static 'js/main.js' %} "></script>
+</body>
+
+</html>

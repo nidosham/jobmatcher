@@ -1,0 +1,54 @@
+<html>{% load static %}
+
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript " src="/static/js/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="{% static 'js/ajax.js' %} "></script>
+    <style>
+        .topnav.logout {
+            align-self: right;
+        }
+        
+        .topnav-right {
+            float: right;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row {
+            margin: 10px;
+            border-radius: 25px;
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topnav">
+        <div style="float:left;"><img src="../static/images/logo.PNG" width="100px" width="80px"></div>
+        <a class="active" href="/matcher/home">Home</a>
+        <a href="/matcher/contacts">Contacts</a>
+        <a href="/matcher/about ">About</a>
+        <a class="nav-link" href="/matcher/notifications">Notifications</a>
+        <div class="topnav-right">
+            <a classs=".logo" href="/matcher/logout ">Sign out</a>
+        </div>
+    </nav>
+
+    <h1>Contact</h1>
+    <div style="align-items: center;">
+        Head Office <br> Tempe, Arizona <br> Phone: 11234567899 <br>Email:admin@jobtrackers.com<br> twitter: <br> facebook: <br>Instagram: <br>youtube:
+
+
+    </div>
+</body>
+<html>

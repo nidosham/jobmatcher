@@ -1,0 +1,133 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript " src="/static/js/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="{% static 'js/ajax.js' %} "></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Create two equal columns that floats next to each other */
+        
+        h2 {
+            color: #0b0c0b;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        
+        .sect {
+            background-color: darkgrey;
+            color: ghostwhite;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row {
+            margin: 10px;
+            border-radius: 25px;
+            background-color: darkgrey;
+        }
+        
+        .topnav.logout {
+            align-self: right;
+        }
+        
+        .topnav-right {
+            float: right;
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="topnav">
+        <div style="float:left;background-color: white;"><img src="../static/images/logo.PNG" width="120px" height="80px"></div>
+        <a class="active" href="/matcher/home">Home</a>
+        <a href="/matcher/contacts">Contacts</a>
+        <a href="/matcher/about ">About</a>
+        <a class="nav-link" href="/matcher/notifications">Notifications</a>
+        <div class="topnav-right">
+            <a classs=".logo" href="/matcher/logout ">Sign out</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar1">
+            <ul class="nav" style="background-color: azure;font-size: 2em; font-family: serif;">
+
+                <li>
+                    <a class="nav-link" href="/matcher/qualifications">Qualifications</a></li>
+                <li>
+                    <a class="nav-link" href="/matcher/notifications">Notifications</a>
+                </li>
+
+        </div>
+
+        <div class="home_content" style="padding-left: 22%;">
+            <div style="background-color: azure;border-radius: 15px;"> <img src="../static/images/logo.PNG" width="300" height="100"></div>
+            <div class="row">
+                <h2>Register</h2>
+                <div class="column">You are free to provide us with your qualification information. This information is used by the search engine to search for jobs positions online that fits your requirements You need to fill your academic details, experiences, skills,
+                    interest and any information that will help fine tune the job search to meet your expectations.
+                </div>
+                <div style="align-items: left;"><img src="../static/images/jobsearch.jpg" width="250" height="220"></div>
+            </div>
+            <div class="row">
+                <h2>Automate Job Search</h2>
+                <div class="column">Our system is going to speed up the process through which you can access job advertisement sites. It speeds up the process by visiting several sites at a machine speed. Fetching the information you have provided </div>
+                <img src="../static/images/job-Search-strategies.jpg" width="250" height="220">
+            </div>
+            <div class="row">
+                <h2>Speed up job Search</h2>
+                <div class="column">By using web crawler the system will be able to search multiple websites. It will then collect all the links with jobs position that meets your criteria. This information will be send to your acccount and you will access them in the notifications
+                    area.
+                </div>
+                <img src="../static/images/robot-job-search.png" width="250" height="220">
+            </div>
+            <div class="row">
+                <h2>Getting your dream job</h2>
+                <div class="column">
+                    To get your dream job the system requires you to provide sufficient information. This information is used to filter links to ensure only those sites with job you qualify for are send to you. This way you can save a lot of time that should have been wasted
+                    going through a lot of links that don't have information fit for you. the job tracker system allow you to get information on time so that you can do application on time. Thus getting the job that you desire on time.
+                </div>
+                <img src="../static/images/let help.PNG" width="250" height="220">
+            </div>
+        </div>
+
+
+    </div>
+    <footer class="page-footer ">
+        <div class="row ">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 ">
+                <a style="color:white " href="/matcher/about/ ">About</a>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>

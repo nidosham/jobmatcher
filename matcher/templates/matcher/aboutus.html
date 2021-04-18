@@ -1,0 +1,82 @@
+<!doctype html>{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> about</title>
+    <link rel="stylesheet " href="{% static 'css/main.css' %} ">
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet " href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css ">
+    <link rel="stylesheet " href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-tdeme.min.css ">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet " href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <style>
+        h2 {
+            font-size: 2em;
+            font-family: serif;
+            color: #807300;
+            background-color: rgb(206, 190, 190);
+            text-align: center;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row {
+            margin: 10px;
+            border-radius: 25px;
+            background-color: darkgrey;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="topnav">
+        <div style="float:left;"><img src="../static/images/logo.PNG" width="100px" width="80px"></div>
+        <a class="active" href="home">Home</a>
+
+    </nav>
+
+    <div class="container">
+        <div class="about_content">
+            <div style="align-items: center;margin-left: 10em;">
+                <img src="../static/images/logo.PNG" width="300px" width="300px">
+            </div>
+            <h1>About our system</h1>
+            <div class="row" style="padding: 10px;">
+                <h2>Job Tracker</h2>
+                <div class="column" style="font-size: large;">
+                    Job Tracker is a system designed to aid jon seeker to access a list of job vacancy list from several sites. This system tracks jobs that best fits the user qualifications. By speeding up job search one is able to save time and appy for jobs as soon as
+                    possible.
+
+                </div>
+                <div style="align-items: left;"> <img src="../static/images/logo.PNG" width="300px" width="300px"></div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="page-footer ">
+        <div class="row ">
+            <div class="col-lg-4 col-md-8 col-sm-12 ">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 ">
+                <a style="color:white " href="/matcher/about ">About</a>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

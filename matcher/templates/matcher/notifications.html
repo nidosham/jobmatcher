@@ -1,0 +1,80 @@
+{% extends "base.html" %}{% load static %} {% block content %}
+<style>
+    table {
+        border-collapse: separate;
+        border: solid black 1px;
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        background-color: azure;
+    }
+    
+    td,
+    th {
+        border-left: solid black 1px;
+        border-top: solid black 1px;
+    }
+    
+    th {
+        background-color: rgb(58, 192, 46);
+        border-top: none;
+    }
+    
+    td:first-child,
+    th:first-child {
+        border-left: none;
+    }
+    
+    .notification {
+        background-color: rgb(18, 168, 106);
+        color: white;
+        text-decoration: none;
+        padding: 15px 26px;
+        position: relative;
+        display: inline-block;
+        border-radius: 2px;
+    }
+    
+    .notification:hover {
+        background: red;
+    }
+    
+    .notification .badge {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
+</style>
+
+
+<table width="600" border="1" cellspacing="2" cellpadding="2">
+    <tr>
+        <th>Job Title</th>
+        <th>Advertised date</th>
+        <th>Link</th>
+    </tr>
+    {% if notificationList %} {% for m in notificationList %}
+    <tr>
+        <td> {{m.job_title}}</td>
+        <td> on {{m.advertised_date}}</td>
+
+        <td>
+
+            <a href="https://{{m.link}}" class="btn btn-primary">
+                <span>Open</span>
+
+            </a>
+        </td>
+    </tr>
+    {% endfor %} {% else%}
+    <td style="color:green">no message sent to you</td>
+    {%endif%}
+
+</table>
+
+
+
+{%endblock%}

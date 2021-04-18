@@ -1,0 +1,125 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript " src="/static/js/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="{% static 'js/ajax.js' %} "></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Create two equal columns that floats next to each other */
+        
+        h1 {
+            color: #4CAF50;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row {
+            margin: 10px;
+            border-radius: 25px;
+        }
+        
+        .search {
+            background-color: white;
+            border-radius: 5px;
+        }
+        
+        .topnav.logout {
+            align-self: right;
+        }
+        
+        ul.nav a:hover {
+            list-style: none;
+            border-top: 1px solid #666;
+            background-color: rgb(34, 170, 194);
+        }
+        
+        .topnav-right {
+            float: right;
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="topnav">
+        <div style="float:left;"><img src="../static/images/logo.PNG" width="100px" width="80px"></div>
+        <a class="active" href="/home">Home</a>
+        <a href="/settings ">Contacts</a>
+        <a href="/about ">About</a>
+        <a class="nav-link" href="/games">Notifications</a>
+        <div class="topnav-right">
+            <a classs=".logo" href="/logout ">Applied Jobs</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar1">
+            <ul class="nav" style="font-size: 2em; font-family: serif;">
+
+                <li>
+                    <a href="/matcher/profile"> <i class="glyphicon glyphicon-user" style="font-size:36px;"></i><span style="color:rgb(250, 250, 250)"></span></a>
+                </li>
+
+                <li>
+                    <a href="/matcher/qualifications">Qualification</a></li>
+                <li>
+                    <a href="/matcher/settings">Interest</a></li>
+
+        </div>
+
+        <div class="home_content" style="padding-left: 22%;">
+            <h1>Home feed</h1>
+
+            {% csrf_token %}
+            <div class="search">
+                <input id="search" type="text" class="search-input" placeholder="Search a player" name="">
+                <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a>
+                <ul id="search-result" class="searchUL">
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </div>
+    <footer class="page-footer ">
+        <div class="row ">
+
+            <div class="col-lg-4 col-md-4 col-sm-12 ">
+                <a style="color:white " href="/about/ ">About</a>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>

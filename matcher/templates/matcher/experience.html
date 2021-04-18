@@ -1,0 +1,85 @@
+<html>{% load static %}
+
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript " src="/static/js/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="{% static 'js/ajax.js' %} "></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    {% if flag == True %}
+                    <h1 class="title">Saved Successfully</h1>
+                    <div class="login-register">
+                        <a href="/matcher/qualification">Login</a>
+                    </div>
+                    {% else %}
+                    <h1 class="title">Experience</h1>
+
+
+                    <hr />
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal" method="post" action="#">{% csrf_token %}
+                    <div class="field" id="uname">
+                        <label>Title</label><span style="color:red" id="error"></span> {{form.title}}
+
+                    </div>
+                    <div class="field" name=" employment" id="uname">
+                        <label>Employment Type</label><span style="color:red" id="error"></span>
+                        <select class="form-control dropdown" id="employment" name="employmentType">
+                        <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                        <option value="Employed">Full time</option>
+                        <option value="Self-employed">Part time</option>
+                        <option value="Out of work">Temporary</option>
+                        <option value="Homemaker">Freelancers</option>
+                     </select>
+                        <!--<label>Employment Type</label><span style="color:red" id="error"></span>-->
+                    </div>
+                    <div class="field" id="fieldofwork">
+                        <label>Field of work</label><span style="color:red" id="error"></span> {{form.fieldofwork}}
+
+                    </div>
+                    <div class="field" id="company">
+                        <label> Company/Organization</label><span style="color:red" id="error"></span> {{form.company}}
+
+                    </div>
+                    <div class="field" id="duration">
+                        <label>duration</label><span style="color:red" id="error"></span> {{form.duration}}
+
+                    </div>
+                    <div class="field" id="country">
+                        <label>country</label><span style="color:red" id="error"></span> {{form.country}}
+
+                    </div>
+                    <div class="field" id="state">
+                        <label>state</label><span style="color:red" id="error"></span> {{form.state}}
+
+                    </div>
+                    <div class="field" id="city">
+                        <label>city</label><span style="color:red" id="error"></span> {{form.city}}
+
+                    </div>
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Save</button>
+                    </div>
+                </form>
+                <!--</div>-->
+            </div>
+
+        </div>
+    </div>
+    {%endif%}
+</body>
+
+</html>
